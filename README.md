@@ -9,7 +9,7 @@
 
 ### 0, 準備．
 
-0.1, 圧縮・解凍ソフト `7-Zip`のダウンロード．  
+・圧縮・解凍ソフト `7-Zip`のダウンロード．  
 
 ### 1, gccコンパイラの導入．
 
@@ -29,7 +29,7 @@
 ### 2, C/C++，Code Rannerをインストール．
 
 2.1, Code Rannerを設定．  
-・**Run In Terminal**項目にチェックを入れる．
+・**Run In Terminal**項目にチェックを入れる．  
 ・`setting json`を編集．  
 ->・"clang.executable"を追加  
 　・"clang.cxxflags"を追加  
@@ -57,7 +57,7 @@
 ### 3, gnuplotをインストール．
 
 3.1, [gnuplot homepage](http://www.gnuplot.info/)にアクセス．  
-3.2, **Gnuplot XX (current stable)**の最初の項目を選択．(2024/02/08時点:[Release 6.0.0(December 2023)](https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.0/))  
+3.2, **Gnuplot XX (current stable)** の最初の項目を選択．(2024/02/08時点:[Release 6.0.0(December 2023)](https://sourceforge.net/projects/gnuplot/files/gnuplot/6.0.0/))  
 3.3, インストーラーをダウンロード．
 3.4, インストーラーを起動．  
 ・日本語でOK．  
@@ -75,28 +75,6 @@
     ".vbs": "cscript //Nologo",
     ".scala": "scala",
     },
-```
-
-## 実行方法
-
-1, ディレクトリ構成．  
-<p align="center">
-<img src="https://github.com/c0b2107561/NeuralCircuitSimulation/blob/main/tree.png" width="350px">
-</p>
-
-・**実行ファイルがあるディレクトリ**にいる状態で下記実行．  
-
-### コンパイル
-
-``` powershell
-gcc -O3 -std=gnu11 -Wall -c hh.c
-gcc -O3 -std=gnu11 -Wall -o hh hh.o -lm 
-```
-
-### 実行
-
-``` powershell
-hh > hh.dat
 ```
 
 ## 参考
