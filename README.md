@@ -31,26 +31,21 @@
 2.1, Code Rannerを設定．  
 ・**Run In Terminal**項目にチェックを入れる．
 ・`setting json`を編集．  
+->・"clang.executable"を追加  
+　・"clang.cxxflags"を追加  
+　・"c"と"cpp"を編集  
 
 ``` json
-    //省略
     "code-runner.runInTerminal": true,
-    //追加
     "clang.executable": "clang++",
     "clang.cxxflags": [ "-std=c++14"],
-    //ここまで
     "code-runner.executorMap": {
-      
-
-
-
       "javascript": "node",
       "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-      //"c"と"cpp"を編集
+      
       "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
       "zig": "zig run",
       "cpp": "cd $dir && g++ -O3 -std=c++14 $fileName && ./a.out",
-      //省略
       }
 ```
 
@@ -70,35 +65,36 @@
 ・追加タスクの選択で`実行ファイルのディレクトリをPATHの環境変数に追加する`にチェック．  
 3.5, VSCodeから実行できるように設定．  
 ・Code Rannerの`settings.json`を編集．  
+-> ・".plt"を追加
 
 ``` json
-//省略
 "code-runner.executorMapByFileExtension": {
-    //".plt"を追加
+    
     ".plt": "gnuplot $fullFileName",
-    //既存
     ".vb": "cd $dir && vbc /nologo $fileName && $dir$fileNameWithoutExt",
     ".vbs": "cscript //Nologo",
     ".scala": "scala",
-    //省略
-},
+    },
 ```
 
 ## 実行方法
 
 1, ディレクトリ構成．  
+<p align="center">
+<img src="https://github.com/c0b2107561/NeuralCircuitSimulation/blob/main/tree.png" width="350px">
+</p>
 
-()
+・**hh**ディレクトリにいる状態で下記実行．  
 
 ### コンパイル
 
-``` shell-session
-C:\~>gcc -O3 -std=gnu11 -Wall -c hh.c
-C:\~>gcc -O3 -std=gnu11 -Wall -o hh hh.o -lm 
+``` powershell
+gcc -O3 -std=gnu11 -Wall -c hh.c
+gcc -O3 -std=gnu11 -Wall -o hh hh.o -lm 
 ```
 
 ### 実行
 
-``` shell-session
-C:\~>hh > hh.dat
+``` powershell
+hh > hh.dat
 ```
