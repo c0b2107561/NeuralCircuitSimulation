@@ -84,7 +84,7 @@
 <img src="https://github.com/c0b2107561/NeuralCircuitSimulation/blob/main/tree.png" width="350px">
 </p>
 
-・**hh**ディレクトリにいる状態で下記実行．  
+・**実行ファイルがあるディレクトリ**にいる状態で下記実行．  
 
 ### コンパイル
 
@@ -98,3 +98,9 @@ gcc -O3 -std=gnu11 -Wall -o hh hh.o -lm
 ``` powershell
 hh > hh.dat
 ```
+
+## 参考
+[VSCodeで利用するC++のバージョンを初心者が変更する](https://qiita.com/YuH25/items/be41fce42641a5ce344e)  
+[計算科学のためのWindowsセットアップ](https://zenn.dev/ohno/books/356315a0e6437c/viewer/68bd69)  
+[WindowsにC言語開発環境Mingw-w64(gccコンパイラ)を導入する](https://dianxnao.com/windows%e3%81%abc%e8%a8%80%e8%aa%9e%e9%96%8b%e7%99%ba%e7%92%b0%e5%a2%83-mingw-w64%ef%bc%88gcc%e3%82%b3%e3%83%b3%e3%83%91%e3%82%a4%e3%83%a9%ef%bc%89%e3%82%92%e5%b0%8e%e5%85%a5%e3%81%99%e3%82%8b/)  
+[Visual Studio CodeでC言語プログラミングを始める(Windows編)](https://dianxnao.com/visual-studio-code%E3%81%A7c%E8%A8%80%E8%AA%9E%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%EF%BC%88windows%E7%B7%A8%EF%BC%89/)
