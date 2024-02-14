@@ -4,7 +4,7 @@
 
 1, ディレクトリ構成．  
 <p align="center">
-<img src="https://github.com/c0b2107561/NeuralCircuitSimulation/blob/main/tree.png" width="350px">
+<img src="https://github.com/c0b2107561/NeuralCircuitSimulation/HHmodel/blob/main/tree.png" width="350px">
 </p>
 
 ・**実行ファイルがあるディレクトリ**にいる状態で下記実行．  
