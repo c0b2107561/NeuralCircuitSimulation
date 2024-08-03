@@ -19,18 +19,16 @@
 ## 環境構築
 
 ## echo_state_network.py
+### 変数
+n_input : 
+n_reservoir : 
+n_output : 
+spectral_radius : 
+tau : 
+threshold : 
+```python:echo_state_network.py  
+```
 
 ## generate_sine_wave_stripes.py
 
 ## network_img.py
-
-input_data : 時刻tにおける入力  
-W_input: 入力層の重み  
-n_input: 入力層のノード数  
-state : 時刻tにおけるreservoir層の内部状態  
- : 行列記法  
-W_reservoir : Reservoir層の重み  
-n_reservoir: Reservoir層のノード数  
-W_output : 出力層の重み  
-predicted_labels : 出力  
-n_output : 出力層のノード数  
