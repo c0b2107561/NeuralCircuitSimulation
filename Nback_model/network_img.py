@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 def Watts_Strogats_small_world_graph():
     n_nodes = 100 # ノード数
     k_neighbors = 6 # 隣接ノード数
-    p_rewire = 1 # 接続試行回数
+    p_rewire = 1 # 再配線確率
 
     # n_nodes = 20 # ノード数Watts
     # k_neighbors = 4 # 隣接ノード数
-    # p_rewire = 1 # 接続試行回数
+    # p_rewire = 1 # 再配線確率
 
 
     ws_graph = nx.watts_strogatz_graph(n_nodes, k_neighbors, p_rewire)
