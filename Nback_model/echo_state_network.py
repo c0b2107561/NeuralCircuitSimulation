@@ -9,11 +9,9 @@ from generate_sine_wave_stripes import main
 p_rewire_list = [0.0, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
 class SpikingEchoStateNetwork:
-    # def __init__(self, n_inputs, n_reservoir, n_outputs, spectral_radius=1.7, tau=0.9, threshold=1.0, reset_value=0.0, k_neighbors=6, p_rewire=0.002):
-    # def __init__(self, n_inputs, n_reservoir, n_outputs, spectral_radius=0.1, tau=0.56, threshold=1.0, reset_value=0.0, k_neighbors=6, p_rewire=0):
     def __init__(self, n_inputs, n_reservoir, n_outputs, spectral_radius=1, tau=0.03, threshold=1.0, reset_value=0.0, k_neighbors=6, p_rewire=0.3):
-        self.n_inputs = n_inputs
-        self.n_reservoir = n_reservoir
+        self.n_inputs = n_inputs 
+        self.n_reservoir = n_reservoir 
         self.n_outputs = n_outputs
         self.spectral_radius = spectral_radius
         self.tau = tau  # 膜電位の減衰のタイム定数
