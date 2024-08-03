@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-# 正弦波縞画像を生成する関数
+# 正弦波縞画像を生成
 def generate_sine_wave_stripes(width, height, frequency, amplitude):
     # x軸とy軸の値を生成
     x = np.linspace(0, 2 * np.pi * frequency, width)
@@ -13,7 +13,7 @@ def generate_sine_wave_stripes(width, height, frequency, amplitude):
     Z = amplitude * np.sin(X)
     return Z
 
-# 正弦波縞画像をプロットする関数
+# 正弦波縞画像をプロット
 def plot_sine_wave_stripes(Z):
     plt.figure(figsize=(6, 5))  # プロットのサイズを指定
     plt.imshow(Z, cmap='gray', origin='lower', aspect='auto')  # 画像をプロット
@@ -23,7 +23,7 @@ def plot_sine_wave_stripes(Z):
     plt.ylabel('Y-axis')  # y軸のラベルを設定
     plt.show()  # プロットを表示
 
-# 各領域の色を判断する関数
+# 各領域の色を判断
 def determine_region_colors(Z, num_regions_x, num_regions_y):
     height, width = Z.shape  # 画像の高さと幅を取得
     region_height = height // num_regions_y  # 各領域の高さを計算
@@ -67,10 +67,9 @@ def main():
     num_regions_y = 40
 
     #frequencies = [1, 3, 5, 7, 9, 11]  # 周波数の要素一覧
-    frequencies = [1, 3, 5, 9, 5, 1, 11, 7, 11, 3, 9, 3, 7, 1, 7, 5, 5, 1, 11, 1, 9, 3, 9, 5, 7, 5, 1, 11, 3, 11, 9] # test_data
     #frequencies = [1, 3, 5] # test_data
-    print(len(frequencies))
-    data_list = []
+    frequencies = [1, 3, 5, 9, 5, 1, 11, 7, 11, 3, 9, 3, 7, 1, 7, 5, 5, 1, 11, 1, 9, 3, 9, 5, 7, 5, 1, 11, 3, 11, 9]
+    print(len(frequencies)) # 31
     
     #random
     # frequency = random.choice(frequencies) # 周波数をランダムに選択
