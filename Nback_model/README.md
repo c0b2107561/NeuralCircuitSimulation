@@ -11,7 +11,6 @@
 5. [generate_sine_wave_stripes.py](generate_sine_wave_stripes.py)
 6. [network_img.py](network_img.py)
 
-## network_img.py
 ## 概要
 
 ## 環境  
@@ -19,16 +18,15 @@
 ## 環境構築
 
 ## echo_state_network.py
-### 変数
-n_input : 
-n_reservoir : 
-n_output : 
-spectral_radius : 
-tau : 
-threshold : 
+
 ```python:echo_state_network.py  
 ```
 
 ## generate_sine_wave_stripes.py
 
 ## network_img.py
+### 機能
+Watts-Strogatsモデルを用いたリザバー層の構築．
+
+### ライブラリ
+### 変数
