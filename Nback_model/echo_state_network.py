@@ -260,7 +260,7 @@ class NeuronNetwork:
 
 # 出力層クラス
 class OutputLayer:
-    def __init__(self, input_dim, output_dim, learning_rate=0.1): # 0.3
+    def __init__(self, input_dim, output_dim, learning_rate=0.01): # 0.03
         self.weights = np.random.randn(output_dim, input_dim) # 重みを小さな値で初期化
         self.biases = np.zeros(output_dim)  # バイアスを0で初期化
         self.learning_rate = learning_rate
