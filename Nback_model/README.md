@@ -8,19 +8,21 @@
 2. [各プログラムについて](#各プログラムについて)
 3. [echo_state_network.py](echo_state_network.py)
 4. [generate_sine_wave_stripes.py](generate_sine_wave_stripes.py)
-5. [network_img.py](network_img.py)
+5. [mulyiple_comperisons](mulyiple_comparisons.py)
+6. [network_img.py](network_img.py)
+7. [vaiance_analysis.py](variance_analysis.py)
 
 ## 概要
-このフォルダはスモールワールド性を有するエコーステートネットワークを作成し，中間層の構造を変化させて健常者とASDに相当するモデルとする．各モデルにWM機能を評価することが可能なN-Back課題を遂行させ，その精度によりネットワーク構造がWM機能に与える影響を分散分析と多重比較により評価する．
+このフォルダに存在するプログラムは作成した複数のエコーステートネットワークにN-Back課題を遂行させた時の正答率を分散分析と多重比較により評価してネットワーク構造がWM機能に与える影響を評価することを目的として作成した．
 
 ## 各プログラムについて
 1. echo_state_network.py  
-最も基本的なプログラム．  
-2. echo_state_network_v2.py  
-学習則をスパイクタイミング依存可塑性(STDP)としたプログラム．  
-3. echo_state_network_v3.py  
-リザバー層を入力付近と出力付近と入出間の3つに分けたプログラム(試作中)．  
-4. echo_state_network_v4.py  
-フィードバックをリストとして保持するようにしたプログラム．  
-5. echo_state_network_v5.py  
-3を基に実験的に値を変化させたり試行するためのプログラム．  
+ネットワークの作成と2-back課題の遂行，正答率の算出と保存を行う
+2. generate_sine_wave_stripes.py  
+2-back課題に使用する正弦波縞画像を複数作成する
+3. mulyiple_comparisons.py  
+Tukey法とFisher法による多重比較を行う
+4. network_img.py  
+Watts-Strogats modelによって作成されるネットワーク構造のイメージ
+5. variance_analysis.py  
+F検定による分散分析を行う
