@@ -80,7 +80,7 @@ class IzhikevichNeuron:
   - ノイズ：膜電位に加える．ニューロン活動の不確実性を表現してよりリアルな挙動を再現
 
 ### InputLayerクラス
-リザバー層にデータを入力するための入力層を作成，リザバー層が扱う初期データを作成すう
+リザバー層にデータを入力するための入力層を作成，リザバー層が扱う初期データを作成する
 ``` python
 # 入力層クラス
 class InputLayer:
@@ -94,11 +94,12 @@ class InputLayer:
         return np.dot(self.weights, input_data + noise) 
 ```
 - 入力層のノード数 = input_dim
-- self.weights：入力層とリザバー層の間の重み行列をランダムで初期化
+- self.weights：入力層とリザバー層の間の結合強度の行列をランダムで初期化
 - ノイズ：入力データに加える．リザバー層の動きをより多様にする
 - リザバー層への入力値：input_data+noiseとself.weightsの行列積
 
 ### NeuronGroupクラス
+各集団内に存在する1000個のニューロンをシミュレーションする，発火や接続や膜電位の描画を行う
 ``` python
 # ニューロン集団クラス
 class NeuronGroup:
@@ -141,48 +142,6 @@ class NeuronGroup:
                     connections[i].append(j)  # iからjへの接続
                     connections[j].append(i)  # jからiへの接続
         return connections
-
-    # def random_connections(self, n_neurons, per):
-    #     """Watts-Strogatzモデルに基づくニューロン間の接続を生成"""
-    #     # Watts-Strogatzグラフを生成
-    #     k = int(per * n_neurons)  # 各ノードの近傍接続数
-    #     # print(f"k : {k}")
-    #     p_rewire = per  # 再接続確率（必要に応じて調整）
-        
-    #     # NetworkXでWatts-Strogatzグラフを生成
-    #     # ws_graph = nx.watts_strogatz_graph(n_neurons, k, p_rewire)
-    #     ws_graph = nx.watts_strogatz_graph(n_neurons, 6, p_rewire)
-
-    #     # 接続を辞書形式に変換
-    #     connections = {i: [] for i in range(n_neurons)}
-    #     weights = {}
-
-    #     for i, neighbors in ws_graph.adjacency():
-    #         for neighbor in neighbors:
-    #             weight = np.random.uniform(0.1, 1.0) if random.random() < p_rewire else np.random.uniform(0.5, 2.0)
-    #             connections[i].append(neighbor)
-    #             weights[(i, neighbor)] = weight
-
-    #     self.connection_weights = weights
-        
-    #     return connections
-
-    def stdp_update(self, pre_idx, post_idx, current_time, tau_pre=20.0, tau_post=20.0, A_plus=0.01, A_minus=0.012):
-        """
-        スパイクタイミング依存可塑性(STDP)に基づき結合重みを更新
-        :param pre_idx: 発火したニューロンのインデックス（プリシナプス）
-        :param post_idx: 発火したニューロンのインデックス（ポストシナプス）
-        :param current_time: 現在の時間
-        """
-        delta_t = self.last_spike_times[post_idx] - self.last_spike_times[pre_idx]
-
-        if delta_t > 0:
-            delta_w = A_plus * np.exp(-delta_t / tau_pre)  # ポテンシエーション
-        elif delta_t < 0:
-            delta_w = -A_minus * np.exp(delta_t / tau_post)  # デプレッション
-        else:
-            return  # タイミングが一致しない場合、更新なし
-
 
     def update_group(self, I, current_time, dt=0.3): # 0.3896
         """集団内のニューロンを更新"""
@@ -239,3 +198,6 @@ class NeuronGroup:
         plt.legend()  # 凡例を表示
         plt.show()
 ```
+- ニューロン位置：三次元空間で各軸の座標が[0, 500]の範囲にランダムで設定(ある程度存在範囲を固定することが可能になる)
+- self.weights：ニューロン間の結合強度を設定（0.1 - 1.0）
+- 各ニューロンに対してランダムに他ニューロンとの接続を作る（確率30%）
